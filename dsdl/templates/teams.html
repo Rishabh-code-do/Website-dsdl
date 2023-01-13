@@ -1,0 +1,341 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        
+        <title>DSDL</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- <link rel="shortcut icon" href="{% static 'images/title-logo.jpg' %}" type="image/png"> -->
+        
+        <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+        
+        <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+        
+        <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+        
+        <link rel="stylesheet" href="{% static 'css/LineIcons.2.0.css' %}">
+        
+        <link rel="stylesheet" href="{% static 'css/bootstrap-4.5.0.min.css' %}">
+        
+        <link rel="stylesheet" href="{% static 'css/default.css' %}">
+        
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        </head>
+
+<body>
+    <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->    
+   
+   
+    <!--====== PRELOADER PART START ======-->
+
+    <div class="preloader">
+        <div class="loader">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--====== PRELOADER PART ENDS ======-->
+    
+    <!--====== HEADER PART START ======-->
+    
+    <header class="header-area">
+        <div class="navbar-area" style="background:#007bff;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <!-- <a class="navbar-brand" href="index.html"> -->
+                                <!-- <img src="{% static 'images/freshworks-logo-head.png' %}" alt="Logo">
+                            </a> -->
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ml-auto">
+                                    <div class="dropdown">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/" ><span>Home</a></span>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="about"><span>About</a></span>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="teams"><span>Team</a></span>
+                                        </li>
+                                        <li class="nav-item" >
+                                            <a class="nav-link" href="events"><span>Event</a></span>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="blogs"><span>Blogs</a></span>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="contact"><span>Contact</a></span>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </div> <!-- navbar collapse -->
+                        </nav> <!-- navbar -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- navbar area -->
+
+        </header>
+
+    <section id="team" class="team-area pt-120">
+        <div class="container">
+        <div class="row justify-content-center">
+        <div class="col-lg-5">
+        <div class="section-title text-center pb-30">
+        <div class="line m-auto"></div>
+        <h3 class="title">Team Members</h3>
+        </div> 
+        </div>
+        </div> 
+        <div class="row justify-content-center">
+        {% for coordinator in coordinators %}
+        <div class="col-lg-4 col-md-7 col-sm-8">
+        <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;">
+        <div class="team-image">
+        <img src="{{coordinator.img.url}}" alt="Team">
+        <div class="social">
+        <ul>
+        <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+        <li><a href="#"><i class="lni lni-twitter-filled"></i></a></li>
+        <li><a href="{{coordinator.insta_url}}"><i class="lni lni-instagram-filled"></i></a></li>
+        <li><a href="{{coordinator.linked_in_url}}"><i class="lni lni-linkedin-original"></i></a></li>
+        </ul>
+        </div>
+        </div>
+        <br>
+        <div class="team-content">
+        <h5 class="holder-name"><a href="#">{{coordinator.name}}</a></h5>
+        <p class="text">{{coordinator.category}}</p>
+        </div>
+        </div> 
+        </div>
+        {% endfor %}
+        <!-- <div class="col-lg-4 col-md-7 col-sm-8">
+        <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-name: fadeIn;">
+        <div class="team-image">
+        <img src="{% static 'images/team-2.png' %}" alt="Team">
+        <div class="social">
+        <ul>
+        <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+        <li><a href="#"><i class="lni lni-twitter-filled"></i></a></li>
+        <li><a href="#"><i class="lni lni-instagram-filled"></i></a></li>
+        <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
+        </ul>
+        </div>
+        </div>
+        <br>
+        <div class="team-content">
+        <h5 class="holder-name"><a href="#">Elon Musk</a></h5>
+        <p class="text">Sr. Software Engineer</p>
+        </div>
+        </div> 
+        </div> -->
+        <!-- <div class="col-lg-4 col-md-7 col-sm-8">
+        <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.8s; animation-name: fadeIn;">
+        <div class="team-image">
+        <img src="{% static 'images/team-3.png' %}" alt="Team">
+        <div class="social">
+        <ul>
+        <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+        <li><a href="#"><i class="lni lni-twitter-filled"></i></a></li>
+        <li><a href="#"><i class="lni lni-instagram-filled"></i></a></li>
+        <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
+        </ul>
+        </div>
+        </div>
+        <br>
+        <div class="team-content">
+        <h5 class="holder-name"><a href="#">Fiona Smith</a></h5>
+        <p class="text">Business Development Manager</p>
+        </div>
+        </div> 
+        </div> -->
+        </div> 
+        </div> 
+        </section>
+
+
+        
+
+
+    <!--====== FOOTER PART START ======-->
+    
+    <footer id="footer" class="footer-area pt-120">
+        <div class="container">
+            <div class="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="subscribe-content mt-45">
+                            <h2 class="subscribe-title">Subscribe Our Newsletter <span>get reguler updates</span></h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="subscribe-form mt-50">
+                            <form action="#">
+                                <input type="text" placeholder="Enter eamil">
+                                <button class="main-btn">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                 </div> <!-- row -->
+            </div> <!-- subscribe area -->
+            <div class="footer-widget pb-100">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-8">
+                        <div class="footer-about mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                            <a class="logo" href="#">
+                                <img src="{% static 'images/freshworks-logo-head.png' %}" alt="logo">
+                            </a>
+                            <p class="text">Refreshing business software that your teams will love. All of our products are ready to go, easy to use and offer great value to any kind of business.</p>
+                            <ul class="social">
+                                <li><a href="https://www.facebook.com/FreshworksInc/"><i class="lni lni-facebook-filled"></i></a></li>
+                                <li><a href="https://twitter.com/freshworksinc"><i class="lni lni-twitter-filled"></i></a></li>
+                                <li><a href="https://www.youtube.com/channel/UCYtaa2E7NSvf3uD9DbsDYZA"><i class="lni lni-youtube"></i></a></li>
+                                <li><a href="https://www.linkedin.com/company/1377014/"><i class="lni lni-linkedin-original"></i></a></li>
+                            </ul>
+                        </div> <!-- footer about -->
+                    </div>
+                    <div class="col-lg-5 col-md-7 col-sm-7">
+                        <div class="footer-link d-flex mt-50 justify-content-md-between">
+                            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                                <div class="footer-title">
+                                    <h4 class="title">Quick Link</h4>
+                                </div>
+                                <ul class="link">
+                                    <li><a href="https://www.freshworks.com/company/leadership/">Leadership</a></li>
+                                    <li><a href="https://www.freshworks.com/company/board/">Board of Directors</a></li>
+                                    <li><a href="https://www.freshworks.com/company/investors/">Investors</a></li>
+                                    <li><a href="https://www.freshworks.com/customers/">Customers</a></li>
+                                    <li><a href="https://www.freshworks.com/solutions/">Solutions</a></li>
+                                </ul>
+                            </div> <!-- footer wrapper -->
+                            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                                <div class="footer-title">
+                                    <h4 class="title">Products</h4>
+                                </div>
+                                <ul class="link">
+                                    <li><a href="https://freshdesk.com/?source=fworks&medium=referral&campaign=fworks_footer_main&_ga=2.3490544.1308618185.1618819374-1848327798.1618819374">Freshdesk</a></li>
+                                    <li><a href="https://freshservice.com/?source=fdesk&medium=referral&campaign=fdesk_footer_main&_ga=2.21506427.1308618185.1618819374-1848327798.1618819374">Freshservice</a></li>
+                                    <li><a href="https://www.freshworks.com/freshcaller-cloud-pbx/?source=fworks&medium=referral&campaign=fworks_footer_main">Freshcaller</a></li>
+                                    <li><a href="https://www.freshworks.com/live-chat-software/?source=fcaller&medium=referral&campaign=fcaller_footer_main">Freshchat</a></li>
+                                    <li><a href="https://www.freshworks.com/hrms/?source=fchat&medium=referral&campaign=fchat_footer_main">Freshteam</a></li>
+                                </ul>
+                            </div> <!-- footer wrapper -->
+                        </div> <!-- footer link -->
+                    </div>
+                    <div class="col-lg-3 col-md-5 col-sm-5">
+                        <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                            <div class="footer-title">
+                                <h4 class="title">Contact Us</h4>
+                            </div>
+                            <ul class="contact">
+                                <li>+91 44 6667 8040</li>
+                                <li>sales@freshworks.com <br> support@freshworks.com</li>
+                                <li>https://www.freshworks.com/</li>
+                                <li>SP Infocity, Block B,<br>
+                                    40 MGR Road, Chennai 600 096<br>
+                                    Availability: (Mon-Fri) 9AM to 5PM IST</li>
+                            </ul>
+                        </div> <!-- footer contact -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- footer widget -->
+            <div class="footer-copyright">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="copyright d-sm-flex justify-content-between">
+                            <div class="copyright-content">
+                                <p class="text">Designed and Developed by <a href="http://tathastu.twowaits.in/portfolio-website/" rel="nofollow">Sanidhya Panwar</a></p>
+                            </div> <!-- copyright content -->
+                        </div> <!-- copyright -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- footer copyright -->
+        </div> <!-- container -->
+        <div id="particles-2"></div>
+    </footer>
+    
+    <!--====== FOOTER PART ENDS ======-->
+    
+    <!--====== BACK TOP TOP PART START ======-->
+
+    <a href="#" class="back-to-top"><i class="lni lni-chevron-up"></i></a>
+
+    <!--====== BACK TOP TOP PART ENDS ======-->   
+    
+    <!--====== PART START ======-->
+    
+<!--
+    <section class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-"></div>
+            </div>
+        </div>
+    </section>
+-->
+    
+    <!--====== PART ENDS ======-->
+
+
+
+
+    <!--====== Jquery js ======-->
+    <script src="{% static 'js/vendor/jquery-3.5.1-min.js' %}"></script>
+    <script src="{% static 'js/vendor/modernizr-3.7.1.min.js' %}"></script>
+    
+    <!--====== Bootstrap js ======-->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-4.5.0.min.js' %}"></script>
+    
+    <!--====== Plugins js ======-->
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/slick.min.js' %}"></script>
+    <script src="{% static 'js/ajax-contact.js' %}"></script>
+    <!--====== Counter Up js ======-->
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+
+    
+    <!--====== Scrolling Nav js ======-->
+    <script src="{% static 'js/jquery.easing.min.js' %}"></script>
+    <!-- <script src="{% static 'js/scrolling-nav.js"></script> -->
+    
+    <!--====== wow js ======-->
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    
+    <!--====== Particles js ======-->
+    <script src="{% static 'js/particles.min.js' %}"></script>
+    
+    <!--====== Main js ======-->
+    <script src="{% static 'js/main.js' %}"></script>
+    
+</body>
+
+</html>
